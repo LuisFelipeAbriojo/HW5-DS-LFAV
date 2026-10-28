@@ -1,0 +1,25 @@
+# ASR
+faster-whisper==1.2.1
+ctranslate2==4.8.3
+av==19.0.2
+nvidia-ml-py==13.615.71
+# audio / señal
+numpy==2.5.4
+scipy==1.18.1
+soundfile==0.14.0
+# métricas y datos
+jiwer==4.0.0
+pandas==3.1.0
+# extracción LLM
+ollama==0.6.3          # proveedor por defecto: modelo abierto local, sin API key
+anthropic==2.3.0       # proveedor opcional (requiere ANTHROPIC_API_KEY)
+pydantic==2.14.1
+# configuración
+pyyaml==6.0.3
+python-dotenv==1.2.4
+# app
+streamlit==1.66.1
+plotly==7.1.0
+# pruebas y aumentación opcional
+pytest==9.1.1
+edge-tts==7.3.1
