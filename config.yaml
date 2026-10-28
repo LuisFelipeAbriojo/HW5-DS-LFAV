@@ -1,0 +1,221 @@
+# Toda ruta, modelo, umbral y prompt vive aquí. El código no tiene valores fijos.
+paths:
+  audio_dir: data/audio                 # audios reales (NO se versionan)
+  synthetic_dir: data/audio_synthetic   # aumentación TTS opcional, grupo separado
+  ladder_dir: data/audio_ladder         # niveles L1..L3 generados (NO se versionan)
+  noise_file: data/noise/ambiente.wav   # ruido ambiente grabado por ti (si falta, se usa ruido rosa con semilla)
+  scripts_dir: data/scripts             # guiones fuente (.yaml) = verdad de campo
+  ground_truth_dir: data/ground_truth   # tablas generadas desde los guiones
+  cache_dir: cache                      # transcripciones cacheadas (SÍ se versionan)
+  results_dir: results                  # métricas precomputadas que lee la app
+
+audio_ext: [".wav", ".m4a", ".mp3", ".ogg", ".opus", ".flac", ".webm"]
+
+asr:
+  model: large-v3            # modelo por defecto del motor
+  device: auto               # auto | cuda | cpu  (el dispositivo REAL se lee en tiempo de ejecución)
+  compute_type: int8_float16 # en CPU se fuerza int8
+  language: es
+  beam_size: 5
+  vad_filter: true
+  word_timestamps: true      # necesario para la confianza por palabra (diagnóstico de errores)
+  glossary_mode: hotwords    # none | initial_prompt | hotwords  (ver README §Glosario)
+
+benchmark:
+  model_sizes: [small, medium, large-v3]
+  precisions: [float16, int8_float16, int8]
+  cpu_model: small           # modelo usado en la comparación CPU vs GPU
+  cpu_compute_type: int8
+  vram_poll_seconds: 0.05
+  bootstrap_iterations: 2000
+  seed: 13
+
+glossary:
+  interview: [Python, SQL, Power BI, Tableau, Docker, Kubernetes, AWS, Azure, Spark, Airflow,
+              React, Node.js, TypeScript, Java, Kotlin, Excel, Git, PostgreSQL, MongoDB, Figma,
+              Scrum, Jira, FastAPI, Django, Pandas, TensorFlow, PyTorch, Looker, Snowflake, dbt,
+              Spring Boot, Kafka, Terraform, GitHub Actions]
+  order: [Yape, Plin, chaufa, lomo saltado, tallarín saltado, chicha morada, Inca Kola,
+          wantán, aeropuerto, Miraflores, Surco, San Borja, Jesús María, Pueblo Libre]
+
+normalization:
+  # Regla de normalización para WER/CER: minúsculas, sin tildes, sin puntuación,
+  # números en palabras -> dígitos, espacios colapsados. Se aplica igual a referencia e hipótesis.
+  lowercase: true
+  strip_accents: true
+  strip_punctuation: true
+  numbers_to_digits: true
+
+extraction:
+  default_method: rules      # rules | llm
+  methods: [rules, llm]
+  llm:
+    # ollama = modelo abierto local, gratis, sin API key (el audio y el texto no salen de la máquina)
+    # anthropic = Claude por API (requiere ANTHROPIC_API_KEY en .env)
+    provider: ollama
+    ollama:
+      model: qwen2.5:7b-instruct   # ~4.7 GB; cabe en la T4 de Colab. En CPU sin GPU: qwen2.5:3b-instruct es más rápido
+      host: http://localhost:11434
+      num_ctx: 8192                # la transcripción + el prompt deben caber en el contexto
+      temperature: 0
+      seed: 13
+    model: claude-opus-5-5
+    effort: low
+    max_tokens: 4000
+    fallbacks: default       # reintento del lado del servidor si el modelo rechaza
+    fallback_beta: server-side-fallback-2026-07-01
+    prompts:
+      interview: |
+        Eres un extractor de datos. Recibes la transcripción automática (ASR) de una entrevista
+        de trabajo en español peruano. Extrae los campos del CANDIDATO. Para cada campo devuelve
+        "valor" y "evidencia": la evidencia es el fragmento EXACTO, copiado carácter por carácter
+        de la transcripción, que sustenta el valor. No corrijas lo que el ASR haya oído mal; si un
+        dato no está dicho, devuelve valor null y evidencia null. Si el candidato se corrige, usa
+        la versión final.
+        - anios_experiencia: número de años (puede ser decimal, ej. 2.5).
+        - ultimo_puesto: el cargo más reciente, tal como se dice.
+        - tecnologias: lista de tecnologías/herramientas mencionadas por el candidato; evidencia = lista de fragmentos.
+        - pretension_salarial: número entero en la moneda dicha; moneda: PEN o USD.
+        - disponibilidad: copia la expresión de disponibilidad (ej. "en dos semanas"); el sistema la resuelve a fecha.
+        - nivel_ingles: una de {categories}.
+      order: |
+        Eres un extractor de pedidos. Recibes la transcripción automática (ASR) de una llamada de
+        venta de un restaurante en Perú. Extrae el pedido FINAL: si el cliente se corrige
+        ("mejor", "no, perdón", "quita", "cámbialo"), solo cuenta la versión final.
+        Para cada valor devuelve "evidencia": el fragmento EXACTO copiado de la transcripción.
+        No corrijas números que el ASR haya oído mal y no hagas cuentas por tu cuenta: total_dicho
+        es el total que se DICE en voz alta, aunque esté mal sumado.
+        - items: producto (nombre del menú), tamano (o null), cantidad, precio_unitario.
+        - promocion: nombre de la promoción mencionada o null.
+        - direccion_entrega: dirección tal como se dice.
+        - metodo_pago: una de {categories}.
+        - total_dicho: número.
+
+verification:
+  # Un valor solo es "verificado" si su evidencia existe literalmente en la transcripción
+  # (tras normalizar) Y la evidencia se normaliza al mismo valor.
+  text_min_ratio: 1.0        # 1.0 = coincidencia literal exacta; no hay coincidencia difusa
+  status_ok: verificado
+  status_fail: sin_verificar
+
+interview:
+  english_levels: [basico, intermedio, avanzado]
+  # palabra/expresión literal -> categoría (la evidencia debe contener una de estas)
+  english_keywords:
+    basico: [basico, a1, a2, elemental, principiante]
+    intermedio: [intermedio, b1, b2, intermedio alto]
+    avanzado: [avanzado, c1, c2, fluido, bilingue, nativo]
+  # señales de "esta tecnología NO cuenta" dentro de la misma frase
+  negation_cues: ["no", "nunca", "muy poco", "casi nada", "no me animaria"]
+  availability:
+    immediate: [inmediato, inmediata, de inmediato, ya mismo, desde ya, desde manana]
+  currencies:
+    PEN: [soles, sol, "s/", "s/."]
+    USD: [dolares, dolar, "us$", "$"]
+  # La entrevista "ocurre" en esta fecha salvo que el guion diga otra; la disponibilidad relativa se resuelve contra ella.
+  default_reference_date: "2026-10-26"
+
+order:
+  domain: restaurante
+  payment_methods: [efectivo, tarjeta, yape, plin]
+  currency: PEN
+  # Carta del restaurante: el validador la usa para diagnosticar (precio oído ≠ precio de carta => probable error ASR).
+  menu:
+    pollo a la brasa:
+      aliases: [pollo, pollo a la brasa, pollos]
+      sizes: {cuarto: 22.90, medio: 39.90, entero: 69.90}
+    lomo saltado:
+      aliases: [lomo saltado, lomo, lomos]
+      sizes: {personal: 32.00, familiar: 58.00}
+    arroz chaufa:
+      aliases: [chaufa, arroz chaufa, chaufas]
+      sizes: {personal: 24.00, familiar: 45.00}
+    tallarin saltado:
+      aliases: [tallarin saltado, tallarin, tallarines]
+      sizes: {personal: 26.00, familiar: 48.00}
+    papas fritas:
+      aliases: [papas fritas, papas, porcion de papas]
+      sizes: {mediana: 9.90, grande: 14.90}
+    ensalada:
+      aliases: [ensalada, ensaladas]
+      sizes: {personal: 8.50}
+    inca kola:
+      aliases: [inca kola, gaseosa, gaseosas, incas]
+      sizes: {"500 ml": 4.50, "1.5 litros": 9.00, "3 litros": 14.00}
+    chicha morada:
+      aliases: [chicha, chicha morada, jarra de chicha]
+      sizes: {vaso: 5.00, jarra: 15.00}
+  # forma dicha -> tamaño canónico de la carta
+  size_aliases:
+    litro y medio: 1.5 litros
+    1.5 litros: 1.5 litros
+    1 litro y medio: 1.5 litros
+    tres litros: 3 litros
+    3 litros: 3 litros
+    500 mililitros: 500 ml
+    500 ml: 500 ml
+    de 500: 500 ml
+    personales: personal
+    personal: personal
+    familiares: familiar
+    familiar: familiar
+    medios: medio
+    medio: medio
+    cuartos: cuarto
+    cuarto: cuarto
+    entero: entero
+    enteros: entero
+    grandes: grande
+    grande: grande
+    medianas: mediana
+    mediana: mediana
+    vasos: vaso
+    vaso: vaso
+    jarra: jarra
+  correction_cues: [mejor, perdon, no perdon, cambiame, cambia, en vez de, en lugar de, me equivoque, corregido, no son, ya no]
+  removal_cues: [quita, quitame, cancela, sin el, sin la, ya no quiero]
+  address_cues: [direccion es, la direccion, mandalo a, mandamelo a, envialo a, me lo mandan a, a la, al jiron, a la avenida]
+  address_abbreviations: {av: avenida, "av.": avenida, jr: jiron, "jr.": jiron, ca: calle, dpto: departamento, "dpto.": departamento, depto: departamento, int: interior, "int.": interior, mz: manzana, "mz.": manzana, lt: lote, urb: urbanizacion, "urb.": urbanizacion}
+  total_cues: [total es, total queda en, total con, su total, el total, total seria, serian, en total son]
+  promotions:
+    # tipo: percent (porcentaje sobre el subtotal) | fixed (monto fijo) | free_item (un ítem gratis)
+    martes de pollo: {aliases: [martes de pollo, martes pollero], type: percent, value: 15}
+    combo familiar: {aliases: [combo familiar], type: fixed, value: 10.00}
+    gaseosa gratis: {aliases: [gaseosa gratis, la gaseosa va de regalo, gaseosa de regalo], type: free_item, product: inca kola}
+    primera compra: {aliases: [primera compra, cupon de bienvenida], type: fixed, value: 5.00}
+
+validation:
+  tolerance: 0.05            # soles; diferencia menor se considera cuadre
+  # Regla de diagnóstico: si un número involucrado tiene confianza ASR < umbral o un precio
+  # unitario no coincide con la carta => error_asr; si todo es confiable y la suma igual no cuadra => error_hablante.
+  low_confidence: 0.60
+
+ladder:
+  sample_rate: 16000
+  levels: [L0, L1, L2, L3]
+  L1: {codec: libopus, bitrate: 16000, container: ogg, fallback_codec: libmp3lame, fallback_bitrate: 24000}
+  L2: {low_hz: 300, high_hz: 3400, resample_hz: 8000, filter_order: 6}
+  L3: {snr_db: 5.0, base: L1, noise_seed: 7}
+  # Si el registro sigue perfecto en L3, endurece con estos niveles extra (se reportan aparte).
+  hardening: {L4: {snr_db: 0.0, base: L2}}
+  vad_frame_ms: 30
+  vad_energy_percentile: 40  # tramas sobre este percentil de energía se consideran voz para medir la SNR
+
+app:
+  title: "De la voz al registro"
+  max_upload_mb: 50
+
+regression_gate:
+  # El workflow de CI recalcula métricas desde la caché (sin GPU, sin transcribir) y falla si se cruzan estos umbrales.
+  max_wer: 0.25
+  min_field_accuracy: 0.60
+
+evaluation:
+  # Qué transcripciones cacheadas son las "principales" para la capa de registro y la escalera.
+  main: {model: large-v3, compute_type: int8_float16, device: cuda, glossary: true}
+  # Si no existe la principal (p. ej. aún no corriste Colab), se usa la primera disponible de esta lista.
+  fallbacks:
+    - {model: large-v3, compute_type: int8, device: cuda, glossary: true}
+    - {model: small, compute_type: int8, device: cpu, glossary: true}
+    - {model: base, compute_type: int8, device: cpu, glossary: true}
+  groups: [real, synthetic]   # "synthetic" se reporta SIEMPRE aparte

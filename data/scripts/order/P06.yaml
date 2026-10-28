@@ -1,0 +1,53 @@
+id: P06
+task: order
+variacion: >
+  Almuerzo de cumpleaños familiar. Tres autocorrecciones de tipos distintos: cantidad (1 -> 2 pollos),
+  tamaño (Inca Kola de litro y medio -> tres litros) y método de pago (efectivo -> Yape, un campo categórico).
+  La referencia de la dirección trae dígitos que NO son la dirección ("cuadra trece de Angamos").
+  El operador dice 191.70 cuando lo correcto es 190.70: error del hablante.
+  Roles: A = operador (tú), B = clienta (tu mamá).
+traps:
+  autocorreccion: true
+  total_erroneo: true
+  direccion_con_digitos: true
+ground_truth:
+  items:
+    - {producto: pollo a la brasa, tamano: entero, cantidad: 2, precio_unitario: 69.90}
+    - {producto: papas fritas, tamano: grande, cantidad: 1, precio_unitario: 14.90}
+    - {producto: ensalada, tamano: personal, cantidad: 2, precio_unitario: 8.50}
+    - {producto: inca kola, tamano: 3 litros, cantidad: 1, precio_unitario: 14.00}
+    - {producto: chicha morada, tamano: jarra, cantidad: 1, precio_unitario: 15.00}
+  promocion: combo familiar
+  direccion_entrega: jiron los geranios 1350 departamento 501 surquillo
+  metodo_pago: yape
+  total_dicho: 191.70
+turns:
+  - A: "Pollería La Brasa Dorada, buenas tardes, le habla Martín. ¿En qué le puedo ayudar?"
+  - B: "Hola, joven, buenas tardes. Mire, hoy es el cumpleaños de mi mamá y vamos a almorzar todos en familia. Quería hacer un pedido para delivery."
+  - A: "¡Qué bonito! Felicidades a la cumpleañera. Dígame, ¿qué le enviamos?"
+  - B: "Primero, un pollo entero a la brasa."
+  - A: "Un pollo entero, está sesenta y nueve con noventa. ¿Algo más?"
+  - B: "Ay, espere, que acaban de confirmar mis hermanas. No, mejor que sean dos pollos enteros, porque si no, no alcanza."
+  - A: "No hay problema. Entonces dos pollos enteros, a sesenta y nueve con noventa cada uno."
+  - B: "Eso. Y unas papas fritas grandes aparte, que a los nietos les encantan."
+  - A: "Papas fritas grandes, a catorce con noventa."
+  - B: "También dos ensaladas personales, para los que están a dieta."
+  - A: "Dos ensaladas personales, a ocho cincuenta cada una."
+  - B: "Y para tomar, una Inca Kola de litro y medio."
+  - A: "Una Inca Kola de litro y medio, a nueve soles."
+  - B: "Mmm, no, somos muchos. Mejor cámbieme la Inca Kola por una de tres litros."
+  - A: "Perfecto, una Inca Kola de tres litros, a catorce soles."
+  - B: "Y una jarra de chicha morada para mi mamá, que no toma nada con gas."
+  - A: "La jarra de chicha está quince soles. Señora, por el tamaño del pedido le aplica el combo familiar, que le descuenta diez soles."
+  - B: "¡Qué bien! Aplíquemelo, por favor."
+  - A: "Listo, combo familiar aplicado. ¿A qué dirección lo enviamos?"
+  - B: "Jirón Los Geranios mil trescientos cincuenta, departamento quinientos uno, en Surquillo."
+  - A: "Jirón Los Geranios mil trescientos cincuenta, departamento quinientos uno, Surquillo. ¿Alguna referencia?"
+  - B: "Es a la altura de la cuadra trece de la avenida Angamos, un edificio blanco con portón negro."
+  - A: "Perfecto. ¿Cómo va a pagar?"
+  - B: "En efectivo. Ay, no, mejor por Yape, que no tengo sencillo."
+  - A: "Muy bien, por Yape. Entonces, con el descuento del combo familiar, su total es ciento noventa y uno con setenta soles."
+  - B: "Ya, perfecto. ¿Y cuánto se demora? Porque la torta ya está lista."
+  - A: "Entre cuarenta minutos y una hora, señora. Le mandamos también una vela de cortesía."
+  - B: "¡Ay, qué detalle! Muchas gracias, joven."
+  - A: "A usted. Feliz cumpleaños a su mamá."

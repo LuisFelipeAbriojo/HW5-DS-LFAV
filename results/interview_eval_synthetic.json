@@ -1,0 +1,277 @@
+{
+ "task": "interview",
+ "group": "synthetic",
+ "levels": {
+  "L0": {
+   "fuente": "L0__small__int8__cpu__glos",
+   "clips": [
+    {
+     "clip": "E01",
+     "fuente": "L0__small__int8__cpu__glos",
+     "wer": 0.0453257790368272,
+     "cer": 0.03603158933859822,
+     "device": "cpu",
+     "s_per_min": 20.33,
+     "methods": {
+      "rules": {
+       "fields": {
+        "anios_experiencia": 4.0,
+        "ultimo_puesto": "analista de inteligencia comercial",
+        "tecnologias": [
+         "SQL",
+         "Pandas",
+         "Power BI"
+        ],
+        "pretension_salarial": 6500.0,
+        "moneda": "PEN",
+        "disponibilidad": "2026-11-09",
+        "nivel_ingles": "intermedio"
+       },
+       "verified": {
+        "anios_experiencia": "verificado",
+        "ultimo_puesto": "verificado",
+        "tecnologias": "verificado",
+        "pretension_salarial": "verificado",
+        "disponibilidad": "verificado",
+        "nivel_ingles": "verificado"
+       },
+       "score": {
+        "anios_experiencia": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "ultimo_puesto": {
+         "ok": true
+        },
+        "tecnologias": {
+         "ok": false,
+         "f1": 0.8571428571428571
+        },
+        "pretension_salarial": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "disponibilidad": {
+         "ok": true,
+         "abs_err_days": 0
+        },
+        "nivel_ingles": {
+         "ok": true
+        }
+       },
+       "raw_literal": {
+        "anios_experiencia": false,
+        "pretension_salarial": false
+       },
+       "validation": null
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "E04",
+     "fuente": "L0__small__int8__cpu__glos",
+     "wer": 0.00425531914893617,
+     "cer": 0.0007412898443291327,
+     "device": "cpu",
+     "s_per_min": 20.71,
+     "methods": {
+      "rules": {
+       "fields": {
+        "anios_experiencia": 3.0,
+        "ultimo_puesto": "disenadora de producto",
+        "tecnologias": [
+         "Figma",
+         "Excel"
+        ],
+        "pretension_salarial": 5000.0,
+        "moneda": "PEN",
+        "disponibilidad": "2026-11-26",
+        "nivel_ingles": "basico"
+       },
+       "verified": {
+        "anios_experiencia": "verificado",
+        "ultimo_puesto": "verificado",
+        "tecnologias": "verificado",
+        "pretension_salarial": "verificado",
+        "disponibilidad": "verificado",
+        "nivel_ingles": "verificado"
+       },
+       "score": {
+        "anios_experiencia": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "ultimo_puesto": {
+         "ok": true
+        },
+        "tecnologias": {
+         "ok": false,
+         "f1": 0.8
+        },
+        "pretension_salarial": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "disponibilidad": {
+         "ok": true,
+         "abs_err_days": 0
+        },
+        "nivel_ingles": {
+         "ok": true
+        }
+       },
+       "raw_literal": {
+        "anios_experiencia": true,
+        "pretension_salarial": true
+       },
+       "validation": null
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    }
+   ],
+   "por_metodo": {
+    "rules": {
+     "n_clips": 2,
+     "por_campo": {
+      "anios_experiencia": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "ultimo_puesto": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "tecnologias": {
+       "aciertos": 0,
+       "n": 2,
+       "exactitud": 0.0,
+       "ic95_wilson": [
+        0.0,
+        0.6576280471103807
+       ]
+      },
+      "pretension_salarial": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "disponibilidad": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "nivel_ingles": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      }
+     },
+     "global": {
+      "aciertos": 10,
+      "n": 12,
+      "exactitud": 0.8333333333333334,
+      "ic95_wilson": [
+       0.5519636426153274,
+       0.9530358523851776
+      ]
+     },
+     "macro_f1_nivel_ingles": 1.0,
+     "error_absoluto_medio": {
+      "anios_experiencia_abs_err": 0.0,
+      "pretension_salarial_abs_err": 0.0,
+      "disponibilidad_abs_err_days": 0.0
+     },
+     "verificacion": {
+      "campos_verificados": 12,
+      "exactitud_si_verificado": 0.8333333333333334,
+      "campos_sin_verificar": 0,
+      "exactitud_si_sin_verificar": null
+     },
+     "ablacion_normalizacion_numerica": {
+      "campos_numericos": 4,
+      "verificados_sin_capa": 2,
+      "verificados_con_capa": 4
+     }
+    },
+    "llm": null
+   },
+   "wer": {
+    "media": 0.024790549092881684,
+    "ic95": [
+     0.00425531914893617,
+     0.0453257790368272
+    ]
+   },
+   "cer": {
+    "media": 0.018386439591463678,
+    "ic95": [
+     0.0007412898443291327,
+     0.03603158933859822
+    ]
+   }
+  }
+ },
+ "wer_vs_registro": {
+  "tabla": [
+   {
+    "clip": "E04",
+    "metodo": "rules",
+    "wer": 0.00425531914893617,
+    "campos_ok": 5,
+    "campos": 6,
+    "fallidos": [
+     "tecnologias"
+    ]
+   },
+   {
+    "clip": "E01",
+    "metodo": "rules",
+    "wer": 0.0453257790368272,
+    "campos_ok": 5,
+    "campos": 6,
+    "fallidos": [
+     "tecnologias"
+    ]
+   }
+  ],
+  "wer_alto_registro_perfecto": null,
+  "wer_bajo_registro_roto": {
+   "clip": "E04",
+   "metodo": "rules",
+   "wer": 0.00425531914893617,
+   "campos_ok": 5,
+   "campos": 6,
+   "fallidos": [
+    "tecnologias"
+   ]
+  }
+ }
+}

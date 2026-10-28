@@ -1,0 +1,20 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# audio y pesos de modelo no se versionan
+data/audio/
+data/audio_synthetic/
+data/audio_ladder/
+data/noise/
+*.wav
+*.m4a
+*.mp3
+*.ogg
+*.opus
+*.flac
+*.webm
+models/
+.streamlit/secrets.toml
+.claude/

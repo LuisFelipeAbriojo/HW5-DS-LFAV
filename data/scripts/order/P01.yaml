@@ -1,0 +1,40 @@
+id: P01
+task: order
+variacion: El cliente corrige la cantidad de gaseosas y añade papas. Total dicho correcto.
+traps:
+  autocorreccion: true
+  total_erroneo: false
+  direccion_con_digitos: true
+ground_truth:
+  items:
+    - {producto: pollo a la brasa, tamano: entero, cantidad: 1, precio_unitario: 69.90}
+    - {producto: inca kola, tamano: 1.5 litros, cantidad: 1, precio_unitario: 9.00}
+    - {producto: papas fritas, tamano: grande, cantidad: 1, precio_unitario: 14.90}
+  promocion: null
+  direccion_entrega: avenida arequipa 2450 departamento 302 lince
+  metodo_pago: yape
+  total_dicho: 93.80
+turns:
+  - A: "Pollería La Brasa Dorada, buenas noches, le habla Andrea. ¿Qué desea pedir?"
+  - B: "Buenas noches, señorita. Quería hacer un pedido para delivery, por favor."
+  - A: "Claro que sí. Dígame."
+  - B: "Primero, un pollo entero."
+  - A: "Un pollo entero, está sesenta y nueve con noventa. Viene con papas y ensalada clásica. ¿Algo más?"
+  - B: "Sí, dos Inca Kola de litro y medio."
+  - A: "Dos Inca Kola de litro y medio, a nueve soles cada una."
+  - B: "Ay, no, perdón, mejor solo una Inca Kola, que vamos a ser pocos. Y agrégame unas papas fritas grandes aparte, que a mi hijo le encantan."
+  - A: "Entonces una sola Inca Kola de litro y medio, y papas fritas grandes a catorce con noventa. ¿Desea cremas?"
+  - B: "Sí, mayonesa y ají, bastante ají, por favor."
+  - A: "Listo, las cremas no tienen costo. ¿Tiene alguna promoción o cupón?"
+  - B: "No, nada esta vez."
+  - A: "¿A qué dirección lo enviamos?"
+  - B: "A la avenida Arequipa dos mil cuatrocientos cincuenta, departamento trescientos dos, en Lince."
+  - A: "Avenida Arequipa dos mil cuatrocientos cincuenta, departamento trescientos dos, Lince. ¿Alguna referencia?"
+  - B: "Frente al parque, es el edificio color crema con rejas negras."
+  - A: "Perfecto. ¿Cómo va a pagar?"
+  - B: "Por Yape."
+  - A: "Muy bien. Entonces su total es noventa y tres con ochenta soles. El yape lo puede hacer al número que le llega por mensaje."
+  - B: "Ok. ¿Y cuánto demora más o menos?"
+  - A: "Entre cuarenta y cinco minutos y una hora, porque hoy hay bastante pedido."
+  - B: "Está bien, no hay problema. Gracias."
+  - A: "Gracias a usted por su preferencia. Buenas noches."

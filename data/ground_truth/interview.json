@@ -1,0 +1,84 @@
+{
+ "E01": {
+  "anios_experiencia": 4,
+  "ultimo_puesto": "analista de inteligencia comercial",
+  "tecnologias": [
+   "SQL",
+   "Python",
+   "Pandas",
+   "Power BI"
+  ],
+  "pretension_salarial": 6500,
+  "moneda": "PEN",
+  "disponibilidad": "2026-11-09",
+  "nivel_ingles": "intermedio",
+  "traps": null,
+  "reference_date": "2026-10-26"
+ },
+ "E02": {
+  "anios_experiencia": 2.5,
+  "ultimo_puesto": "desarrolladora backend junior",
+  "tecnologias": [
+   "Java",
+   "Spring Boot",
+   "Docker",
+   "Kubernetes",
+   "PostgreSQL",
+   "Kafka"
+  ],
+  "pretension_salarial": 4800,
+  "moneda": "PEN",
+  "disponibilidad": "inmediata",
+  "nivel_ingles": "avanzado",
+  "traps": null,
+  "reference_date": "2026-10-27"
+ },
+ "E03": {
+  "anios_experiencia": 7,
+  "ultimo_puesto": "ingeniero de infraestructura cloud",
+  "tecnologias": [
+   "AWS",
+   "Terraform",
+   "Kubernetes",
+   "GitHub Actions"
+  ],
+  "pretension_salarial": 2200,
+  "moneda": "USD",
+  "disponibilidad": "2026-12-01",
+  "nivel_ingles": "avanzado",
+  "traps": null,
+  "reference_date": "2026-10-28"
+ },
+ "E04": {
+  "anios_experiencia": 3,
+  "ultimo_puesto": "diseñadora de producto",
+  "tecnologias": [
+   "Figma",
+   "Jira",
+   "Excel"
+  ],
+  "pretension_salarial": 5000,
+  "moneda": "PEN",
+  "disponibilidad": "2026-11-26",
+  "nivel_ingles": "basico",
+  "traps": null,
+  "reference_date": "2026-10-26"
+ },
+ "E05": {
+  "anios_experiencia": 5,
+  "ultimo_puesto": "líder técnico de datos",
+  "tecnologias": [
+   "Airflow",
+   "Spark",
+   "Snowflake",
+   "dbt",
+   "Python"
+  ],
+  "pretension_salarial": 9350,
+  "moneda": "PEN",
+  "disponibilidad": "2026-11-25",
+  "nivel_ingles": "intermedio",
+  "traps": null,
+  "reference_date": "2026-10-26"
+ }
+}

@@ -1,0 +1,411 @@
+{
+ "task": "interview",
+ "group": "real",
+ "levels": {
+  "REF": {
+   "fuente": "referencia",
+   "clips": [
+    {
+     "clip": "E01",
+     "fuente": "referencia",
+     "methods": {
+      "rules": {
+       "fields": {
+        "anios_experiencia": 4.0,
+        "ultimo_puesto": "analista de inteligencia comercial",
+        "tecnologias": [
+         "SQL",
+         "Python",
+         "Pandas",
+         "Power BI"
+        ],
+        "pretension_salarial": 6500.0,
+        "moneda": "PEN",
+        "disponibilidad": "2026-11-09",
+        "nivel_ingles": "intermedio"
+       },
+       "verified": {
+        "anios_experiencia": "verificado",
+        "ultimo_puesto": "verificado",
+        "tecnologias": "verificado",
+        "pretension_salarial": "verificado",
+        "disponibilidad": "verificado",
+        "nivel_ingles": "verificado"
+       },
+       "score": {
+        "anios_experiencia": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "ultimo_puesto": {
+         "ok": true
+        },
+        "tecnologias": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "pretension_salarial": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "disponibilidad": {
+         "ok": true,
+         "abs_err_days": 0
+        },
+        "nivel_ingles": {
+         "ok": true
+        }
+       },
+       "raw_literal": {
+        "anios_experiencia": false,
+        "pretension_salarial": false
+       },
+       "validation": null
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "E02",
+     "fuente": "referencia",
+     "methods": {
+      "rules": {
+       "fields": {
+        "anios_experiencia": 2.5,
+        "ultimo_puesto": "desarrolladora backend junior",
+        "tecnologias": [
+         "Java",
+         "Spring Boot",
+         "Docker",
+         "Kubernetes",
+         "PostgreSQL",
+         "Kafka"
+        ],
+        "pretension_salarial": 4800.0,
+        "moneda": "PEN",
+        "disponibilidad": "inmediata",
+        "nivel_ingles": "avanzado"
+       },
+       "verified": {
+        "anios_experiencia": "verificado",
+        "ultimo_puesto": "verificado",
+        "tecnologias": "verificado",
+        "pretension_salarial": "verificado",
+        "disponibilidad": "verificado",
+        "nivel_ingles": "verificado"
+       },
+       "score": {
+        "anios_experiencia": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "ultimo_puesto": {
+         "ok": true
+        },
+        "tecnologias": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "pretension_salarial": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "disponibilidad": {
+         "ok": true,
+         "abs_err_days": null
+        },
+        "nivel_ingles": {
+         "ok": true
+        }
+       },
+       "raw_literal": {
+        "anios_experiencia": false,
+        "pretension_salarial": false
+       },
+       "validation": null
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "E03",
+     "fuente": "referencia",
+     "methods": {
+      "rules": {
+       "fields": {
+        "anios_experiencia": 7.0,
+        "ultimo_puesto": "ingeniero de infraestructura cloud",
+        "tecnologias": [
+         "AWS",
+         "Terraform",
+         "Kubernetes",
+         "GitHub Actions"
+        ],
+        "pretension_salarial": 2200.0,
+        "moneda": "USD",
+        "disponibilidad": "2026-12-01",
+        "nivel_ingles": "avanzado"
+       },
+       "verified": {
+        "anios_experiencia": "verificado",
+        "ultimo_puesto": "verificado",
+        "tecnologias": "verificado",
+        "pretension_salarial": "verificado",
+        "disponibilidad": "verificado",
+        "nivel_ingles": "verificado"
+       },
+       "score": {
+        "anios_experiencia": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "ultimo_puesto": {
+         "ok": true
+        },
+        "tecnologias": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "pretension_salarial": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "disponibilidad": {
+         "ok": true,
+         "abs_err_days": 0
+        },
+        "nivel_ingles": {
+         "ok": true
+        }
+       },
+       "raw_literal": {
+        "anios_experiencia": false,
+        "pretension_salarial": false
+       },
+       "validation": null
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "E04",
+     "fuente": "referencia",
+     "methods": {
+      "rules": {
+       "fields": {
+        "anios_experiencia": 3.0,
+        "ultimo_puesto": "disenadora de producto",
+        "tecnologias": [
+         "Figma",
+         "Jira",
+         "Excel"
+        ],
+        "pretension_salarial": 5000.0,
+        "moneda": "PEN",
+        "disponibilidad": "2026-11-26",
+        "nivel_ingles": "basico"
+       },
+       "verified": {
+        "anios_experiencia": "verificado",
+        "ultimo_puesto": "verificado",
+        "tecnologias": "verificado",
+        "pretension_salarial": "verificado",
+        "disponibilidad": "verificado",
+        "nivel_ingles": "verificado"
+       },
+       "score": {
+        "anios_experiencia": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "ultimo_puesto": {
+         "ok": true
+        },
+        "tecnologias": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "pretension_salarial": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "disponibilidad": {
+         "ok": true,
+         "abs_err_days": 0
+        },
+        "nivel_ingles": {
+         "ok": true
+        }
+       },
+       "raw_literal": {
+        "anios_experiencia": false,
+        "pretension_salarial": false
+       },
+       "validation": null
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "E05",
+     "fuente": "referencia",
+     "methods": {
+      "rules": {
+       "fields": {
+        "anios_experiencia": 5.0,
+        "ultimo_puesto": "lider tecnico de datos",
+        "tecnologias": [
+         "Airflow",
+         "Spark",
+         "Snowflake",
+         "dbt",
+         "Python"
+        ],
+        "pretension_salarial": 9350.0,
+        "moneda": "PEN",
+        "disponibilidad": "2026-11-25",
+        "nivel_ingles": "intermedio"
+       },
+       "verified": {
+        "anios_experiencia": "verificado",
+        "ultimo_puesto": "verificado",
+        "tecnologias": "verificado",
+        "pretension_salarial": "verificado",
+        "disponibilidad": "verificado",
+        "nivel_ingles": "verificado"
+       },
+       "score": {
+        "anios_experiencia": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "ultimo_puesto": {
+         "ok": true
+        },
+        "tecnologias": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "pretension_salarial": {
+         "ok": true,
+         "abs_err": 0.0
+        },
+        "disponibilidad": {
+         "ok": true,
+         "abs_err_days": 0
+        },
+        "nivel_ingles": {
+         "ok": true
+        }
+       },
+       "raw_literal": {
+        "anios_experiencia": false,
+        "pretension_salarial": false
+       },
+       "validation": null
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    }
+   ],
+   "por_metodo": {
+    "rules": {
+     "n_clips": 5,
+     "por_campo": {
+      "anios_experiencia": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      },
+      "ultimo_puesto": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      },
+      "tecnologias": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      },
+      "pretension_salarial": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      },
+      "disponibilidad": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      },
+      "nivel_ingles": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      }
+     },
+     "global": {
+      "aciertos": 30,
+      "n": 30,
+      "exactitud": 1.0,
+      "ic95_wilson": [
+       0.8864829086095221,
+       1.0
+      ]
+     },
+     "macro_f1_nivel_ingles": 1.0,
+     "error_absoluto_medio": {
+      "anios_experiencia_abs_err": 0.0,
+      "pretension_salarial_abs_err": 0.0,
+      "disponibilidad_abs_err_days": 0.0
+     },
+     "verificacion": {
+      "campos_verificados": 30,
+      "exactitud_si_verificado": 1.0,
+      "campos_sin_verificar": 0,
+      "exactitud_si_sin_verificar": null
+     },
+     "ablacion_normalizacion_numerica": {
+      "campos_numericos": 10,
+      "verificados_sin_capa": 0,
+      "verificados_con_capa": 10
+     }
+    },
+    "llm": null
+   }
+  }
+ }
+}

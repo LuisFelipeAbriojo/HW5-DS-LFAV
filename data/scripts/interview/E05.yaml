@@ -1,0 +1,32 @@
+id: E05
+task: interview
+reference_date: "2026-10-26"
+variacion: >
+  Orden: experiencia y puesto en la misma frase, salario no redondo, tecnologías,
+  disponibilidad como preaviso en días, inglés como nivel MCER (B2 => intermedio).
+  Trampas: "el último año y medio" junto al total de 5; cifra 9350 difícil de oír.
+ground_truth:
+  anios_experiencia: 5
+  ultimo_puesto: líder técnico de datos
+  tecnologias: [Airflow, Spark, Snowflake, dbt, Python]
+  pretension_salarial: 9350
+  moneda: PEN
+  disponibilidad: "2026-11-25"
+  nivel_ingles: intermedio
+turns:
+  - A: "Buenos días, bienvenido. Empecemos por lo básico. Cuéntame quién eres y qué has hecho."
+  - B: "Buenos días. Llevo cinco años en ingeniería de datos. El último año y medio he sido líder técnico de datos en una aseguradora, con un equipo de cuatro personas."
+  - A: "¿Y qué construyeron ahí?"
+  - B: "Migramos todo el almacén antiguo a la nube. Orquestamos con Airflow, procesamos con Spark, el almacén quedó en Snowflake y las transformaciones las modelamos con dbt. Todo el código es Python."
+  - A: "Interesante. ¿Cuál fue el problema más difícil?"
+  - B: "La calidad de datos. Había pólizas duplicadas desde hace años y nadie sabía cuál era la buena. Tuvimos que sentarnos con el área de siniestros para definir las reglas."
+  - A: "Hablemos de números. ¿Cuál es tu pretensión?"
+  - B: "Mi pretensión es de nueve mil trescientos cincuenta soles. Sé que es un número raro, pero así me sale el cálculo con mis gastos y lo que gano hoy."
+  - A: "Nueve mil trescientos cincuenta, anotado. ¿Cuándo podrías incorporarte?"
+  - B: "Mi contrato tiene un preaviso de treinta días, así que podría empezar apenas se cumplan esos treinta días."
+  - A: "Entendido. Y el inglés, ¿cómo lo describirías?"
+  - B: "Tengo un B2 certificado. Leo y escribo bien; en llamadas largas a veces me pierdo un poco."
+  - A: "Perfecto. ¿Tienes preguntas?"
+  - B: "¿El equipo es nuevo o ya existe?"
+  - A: "Ya existe, son seis personas y buscamos a quien lo lidere. Te escribimos el viernes."
+  - B: "Excelente, muchas gracias."

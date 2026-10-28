@@ -1,0 +1,39 @@
+id: P03
+task: order
+variacion: >
+  El cliente pide tres medios pollos y se corrige a dos. Promoción porcentual (15%).
+  La operadora dice 78.48 cuando lo correcto es 75.48: error del hablante.
+traps:
+  autocorreccion: true
+  total_erroneo: true
+  direccion_con_digitos: true
+ground_truth:
+  items:
+    - {producto: pollo a la brasa, tamano: medio, cantidad: 2, precio_unitario: 39.90}
+    - {producto: inca kola, tamano: 500 ml, cantidad: 2, precio_unitario: 4.50}
+  promocion: martes de pollo
+  direccion_entrega: jiron huiracocha 1290 jesus maria
+  metodo_pago: efectivo
+  total_dicho: 78.48
+turns:
+  - A: "Buenas noches, La Brasa Dorada, habla Andrea."
+  - B: "Hola, buenas noches. ¿Hoy tienen la promoción del martes de pollo?"
+  - A: "Sí, hoy martes de pollo tiene quince por ciento de descuento en todo el pedido."
+  - B: "Excelente. Entonces mándame tres medios pollos."
+  - A: "Tres medios pollos, a treinta y nueve con noventa cada uno."
+  - B: "Espera, espera. Mi hermana ya no viene. Mejor que sean dos medios pollos nomás."
+  - A: "No se preocupe. Entonces dos medios pollos. ¿Algo para tomar?"
+  - B: "Dos Inca Kola personales, las de quinientos."
+  - A: "Dos Inca Kola de quinientos mililitros, a cuatro cincuenta cada una."
+  - B: "Eso es todo."
+  - A: "¿A qué dirección?"
+  - B: "Jirón Huiracocha mil doscientos noventa, en Jesús María."
+  - A: "Jirón Huiracocha mil doscientos noventa, Jesús María. ¿Piso?"
+  - B: "Primer piso, es una casa con una puerta verde."
+  - A: "Listo. ¿Cómo paga?"
+  - B: "En efectivo. Pago con un billete de cien."
+  - A: "Perfecto, le llevamos el vuelto. Con el descuento del martes de pollo, su total queda en setenta y ocho con cuarenta y ocho."
+  - B: "Ya, dale. ¿Cuánto demora?"
+  - A: "Unos cincuenta minutos."
+  - B: "Bueno, gracias, señorita."
+  - A: "Gracias a usted, buenas noches."

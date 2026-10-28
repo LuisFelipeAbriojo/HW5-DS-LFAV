@@ -1,0 +1,1373 @@
+{
+ "task": "order",
+ "group": "synthetic",
+ "levels": {
+  "L0": {
+   "fuente": "L0__small__int8__cpu__glos",
+   "clips": [
+    {
+     "clip": "P01",
+     "fuente": "L0__small__int8__cpu__glos",
+     "wer": 0.0730593607305936,
+     "cer": 0.06335616438356165,
+     "device": "cpu",
+     "s_per_min": 18.71,
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "entero",
+          "cantidad": 1,
+          "precio_unitario": 69.9
+         },
+         {
+          "producto": "inca kola",
+          "tamano": "1.5 litros",
+          "cantidad": 1,
+          "precio_unitario": 9.0
+         },
+         {
+          "producto": "papas fritas",
+          "tamano": "grande",
+          "cantidad": 1,
+          "precio_unitario": 14.9
+         }
+        ],
+        "promocion": null,
+        "direccion_entrega": "avenida arequipa 2450 departamento 302 lince",
+        "metodo_pago": "yape",
+        "total_dicho": 93.8
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "no_extraido",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": true,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 93.8,
+        "descuento": 0.0,
+        "esperado": 93.8,
+        "dicho": 93.8,
+        "diferencia": 0.0,
+        "cuadra": true,
+        "senales": [],
+        "diagnostico": "ok"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "P03",
+     "fuente": "L0__small__int8__cpu__glos",
+     "wer": 0.0641025641025641,
+     "cer": 0.045563549160671464,
+     "device": "cpu",
+     "s_per_min": 17.98,
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "medio",
+          "cantidad": 2,
+          "precio_unitario": 39.9
+         },
+         {
+          "producto": "inca kola",
+          "tamano": "500 ml",
+          "cantidad": 2,
+          "precio_unitario": 450.0
+         }
+        ],
+        "promocion": "martes de pollo",
+        "direccion_entrega": "giron huiracocha 1290 jesus maria",
+        "metodo_pago": "efectivo",
+        "total_dicho": 78.48
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "verificado",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": false,
+         "f1": 0.5
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": false,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 979.8,
+        "descuento": 146.97,
+        "esperado": 832.83,
+        "dicho": 78.48,
+        "diferencia": -754.35,
+        "cuadra": false,
+        "senales": [
+         "precio de inca kola oído 450.0 ≠ carta 4.5"
+        ],
+        "esperado_con_carta": 75.48,
+        "diagnostico": "error_asr"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    }
+   ],
+   "por_metodo": {
+    "rules": {
+     "n_clips": 2,
+     "por_campo": {
+      "items": {
+       "aciertos": 1,
+       "n": 2,
+       "exactitud": 0.5,
+       "ic95_wilson": [
+        0.09452865480086614,
+        0.9054713451991339
+       ]
+      },
+      "promocion": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "direccion_entrega": {
+       "aciertos": 1,
+       "n": 2,
+       "exactitud": 0.5,
+       "ic95_wilson": [
+        0.09452865480086614,
+        0.9054713451991339
+       ]
+      },
+      "metodo_pago": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "total_dicho": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      }
+     },
+     "global": {
+      "aciertos": 8,
+      "n": 10,
+      "exactitud": 0.8,
+      "ic95_wilson": [
+       0.49015684672072335,
+       0.9433190520193067
+      ]
+     },
+     "macro_f1_metodo_pago": 1.0,
+     "error_absoluto_medio": {
+      "total_dicho_abs_err": 0.0
+     },
+     "verificacion": {
+      "campos_verificados": 9,
+      "exactitud_si_verificado": 0.7777777777777778,
+      "campos_sin_verificar": 0,
+      "exactitud_si_sin_verificar": null
+     },
+     "validacion": {
+      "atrapados": 1,
+      "perdidos": 0,
+      "falsas_alarmas": 0,
+      "correctos_sin_alarma": 1,
+      "no_chequeables": 0,
+      "diagnostico_acierta": 1,
+      "diagnostico_n": 1,
+      "detalle": [
+       {
+        "clip": "P01",
+        "trampa_total_erroneo": false,
+        "cuadra": true,
+        "esperado": 93.8,
+        "dicho": 93.8,
+        "diagnostico": "ok",
+        "diagnostico_real": null,
+        "senales": []
+       },
+       {
+        "clip": "P03",
+        "trampa_total_erroneo": true,
+        "cuadra": false,
+        "esperado": 832.83,
+        "dicho": 78.48,
+        "diagnostico": "error_asr",
+        "diagnostico_real": "error_asr",
+        "senales": [
+         "precio de inca kola oído 450.0 ≠ carta 4.5"
+        ]
+       }
+      ]
+     }
+    },
+    "llm": null
+   },
+   "wer": {
+    "media": 0.06858096241657885,
+    "ic95": [
+     0.0641025641025641,
+     0.0730593607305936
+    ]
+   },
+   "cer": {
+    "media": 0.05445985677211655,
+    "ic95": [
+     0.045563549160671464,
+     0.06335616438356165
+    ]
+   }
+  },
+  "L1": {
+   "fuente": "L1__small__int8__cpu__glos",
+   "clips": [
+    {
+     "clip": "P01",
+     "fuente": "L1__small__int8__cpu__glos",
+     "wer": 0.0547945205479452,
+     "cer": 0.046232876712328765,
+     "device": "cpu",
+     "s_per_min": 18.91,
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "entero",
+          "cantidad": 1,
+          "precio_unitario": 69.9
+         },
+         {
+          "producto": "inca kola",
+          "tamano": "1.5 litros",
+          "cantidad": 1,
+          "precio_unitario": 9.0
+         },
+         {
+          "producto": "papas fritas",
+          "tamano": "grande",
+          "cantidad": 1,
+          "precio_unitario": 14.9
+         }
+        ],
+        "promocion": null,
+        "direccion_entrega": "avenida arequipa 2450 departamento 302 lince",
+        "metodo_pago": "yape",
+        "total_dicho": 93.8
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "no_extraido",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": true,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 93.8,
+        "descuento": 0.0,
+        "esperado": 93.8,
+        "dicho": 93.8,
+        "diferencia": 0.0,
+        "cuadra": true,
+        "senales": [],
+        "diagnostico": "ok"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "P03",
+     "fuente": "L1__small__int8__cpu__glos",
+     "wer": 0.038461538461538464,
+     "cer": 0.005995203836930456,
+     "device": "cpu",
+     "s_per_min": 19.13,
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "medio",
+          "cantidad": 2,
+          "precio_unitario": 39.9
+         },
+         {
+          "producto": "inca kola",
+          "tamano": "500 ml",
+          "cantidad": 2,
+          "precio_unitario": 450.0
+         }
+        ],
+        "promocion": "martes de pollo",
+        "direccion_entrega": "giron huiracocha 1290 jesus maria",
+        "metodo_pago": "efectivo",
+        "total_dicho": 78.48
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "verificado",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": false,
+         "f1": 0.5
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": false,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 979.8,
+        "descuento": 146.97,
+        "esperado": 832.83,
+        "dicho": 78.48,
+        "diferencia": -754.35,
+        "cuadra": false,
+        "senales": [
+         "precio de inca kola oído 450.0 ≠ carta 4.5"
+        ],
+        "esperado_con_carta": 75.48,
+        "diagnostico": "error_asr"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    }
+   ],
+   "por_metodo": {
+    "rules": {
+     "n_clips": 2,
+     "por_campo": {
+      "items": {
+       "aciertos": 1,
+       "n": 2,
+       "exactitud": 0.5,
+       "ic95_wilson": [
+        0.09452865480086614,
+        0.9054713451991339
+       ]
+      },
+      "promocion": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "direccion_entrega": {
+       "aciertos": 1,
+       "n": 2,
+       "exactitud": 0.5,
+       "ic95_wilson": [
+        0.09452865480086614,
+        0.9054713451991339
+       ]
+      },
+      "metodo_pago": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "total_dicho": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      }
+     },
+     "global": {
+      "aciertos": 8,
+      "n": 10,
+      "exactitud": 0.8,
+      "ic95_wilson": [
+       0.49015684672072335,
+       0.9433190520193067
+      ]
+     },
+     "macro_f1_metodo_pago": 1.0,
+     "error_absoluto_medio": {
+      "total_dicho_abs_err": 0.0
+     },
+     "verificacion": {
+      "campos_verificados": 9,
+      "exactitud_si_verificado": 0.7777777777777778,
+      "campos_sin_verificar": 0,
+      "exactitud_si_sin_verificar": null
+     },
+     "validacion": {
+      "atrapados": 1,
+      "perdidos": 0,
+      "falsas_alarmas": 0,
+      "correctos_sin_alarma": 1,
+      "no_chequeables": 0,
+      "diagnostico_acierta": 1,
+      "diagnostico_n": 1,
+      "detalle": [
+       {
+        "clip": "P01",
+        "trampa_total_erroneo": false,
+        "cuadra": true,
+        "esperado": 93.8,
+        "dicho": 93.8,
+        "diagnostico": "ok",
+        "diagnostico_real": null,
+        "senales": []
+       },
+       {
+        "clip": "P03",
+        "trampa_total_erroneo": true,
+        "cuadra": false,
+        "esperado": 832.83,
+        "dicho": 78.48,
+        "diagnostico": "error_asr",
+        "diagnostico_real": "error_asr",
+        "senales": [
+         "precio de inca kola oído 450.0 ≠ carta 4.5"
+        ]
+       }
+      ]
+     }
+    },
+    "llm": null
+   },
+   "wer": {
+    "media": 0.04662802950474183,
+    "ic95": [
+     0.038461538461538464,
+     0.0547945205479452
+    ]
+   },
+   "cer": {
+    "media": 0.02611404027462961,
+    "ic95": [
+     0.005995203836930456,
+     0.046232876712328765
+    ]
+   }
+  },
+  "L2": {
+   "fuente": "L2__small__int8__cpu__glos",
+   "clips": [
+    {
+     "clip": "P01",
+     "fuente": "L2__small__int8__cpu__glos",
+     "wer": 0.5753424657534246,
+     "cer": 0.538527397260274,
+     "device": "cpu",
+     "s_per_min": 8.63,
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "entero",
+          "cantidad": 1,
+          "precio_unitario": null
+         },
+         {
+          "producto": "inca kola",
+          "tamano": "1.5 litros",
+          "cantidad": 1,
+          "precio_unitario": null
+         }
+        ],
+        "promocion": null,
+        "direccion_entrega": "avenida arequipa 2450 departamento 302 lince",
+        "metodo_pago": "yape",
+        "total_dicho": null
+       },
+       "verified": {
+        "items": "sin_verificar",
+        "promocion": "no_extraido",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "no_extraido"
+       },
+       "score": {
+        "items": {
+         "ok": false,
+         "f1": 0.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": true,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": false,
+         "abs_err": null
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "cuadra": null,
+        "diagnostico": "incompleto",
+        "esperado": null,
+        "dicho": null,
+        "diferencia": null,
+        "senales": [
+         "faltan ítems, precios o total"
+        ]
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "P03",
+     "fuente": "L2__small__int8__cpu__glos",
+     "wer": 0.5512820512820513,
+     "cer": 0.5251798561151079,
+     "device": "cpu",
+     "s_per_min": 7.0,
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "medio",
+          "cantidad": 2,
+          "precio_unitario": null
+         },
+         {
+          "producto": "inca kola",
+          "tamano": "500 ml",
+          "cantidad": 2,
+          "precio_unitario": null
+         }
+        ],
+        "promocion": "martes de pollo",
+        "direccion_entrega": null,
+        "metodo_pago": null,
+        "total_dicho": null
+       },
+       "verified": {
+        "items": "sin_verificar",
+        "promocion": "verificado",
+        "direccion_entrega": "no_extraido",
+        "metodo_pago": "no_extraido",
+        "total_dicho": "no_extraido"
+       },
+       "score": {
+        "items": {
+         "ok": false,
+         "f1": 0.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": false,
+         "digits_ok": false
+        },
+        "metodo_pago": {
+         "ok": false
+        },
+        "total_dicho": {
+         "ok": false,
+         "abs_err": null
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "cuadra": null,
+        "diagnostico": "incompleto",
+        "esperado": null,
+        "dicho": null,
+        "diferencia": null,
+        "senales": [
+         "faltan ítems, precios o total"
+        ]
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    }
+   ],
+   "por_metodo": {
+    "rules": {
+     "n_clips": 2,
+     "por_campo": {
+      "items": {
+       "aciertos": 0,
+       "n": 2,
+       "exactitud": 0.0,
+       "ic95_wilson": [
+        0.0,
+        0.6576280471103807
+       ]
+      },
+      "promocion": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "direccion_entrega": {
+       "aciertos": 1,
+       "n": 2,
+       "exactitud": 0.5,
+       "ic95_wilson": [
+        0.09452865480086614,
+        0.9054713451991339
+       ]
+      },
+      "metodo_pago": {
+       "aciertos": 1,
+       "n": 2,
+       "exactitud": 0.5,
+       "ic95_wilson": [
+        0.09452865480086614,
+        0.9054713451991339
+       ]
+      },
+      "total_dicho": {
+       "aciertos": 0,
+       "n": 2,
+       "exactitud": 0.0,
+       "ic95_wilson": [
+        0.0,
+        0.6576280471103807
+       ]
+      }
+     },
+     "global": {
+      "aciertos": 4,
+      "n": 10,
+      "exactitud": 0.4,
+      "ic95_wilson": [
+       0.16817758120350967,
+       0.6873304525498135
+      ]
+     },
+     "macro_f1_metodo_pago": 0.5,
+     "error_absoluto_medio": {},
+     "verificacion": {
+      "campos_verificados": 3,
+      "exactitud_si_verificado": 1.0,
+      "campos_sin_verificar": 2,
+      "exactitud_si_sin_verificar": 0.0
+     },
+     "validacion": {
+      "atrapados": 0,
+      "perdidos": 0,
+      "falsas_alarmas": 0,
+      "correctos_sin_alarma": 0,
+      "no_chequeables": 2,
+      "diagnostico_acierta": 0,
+      "diagnostico_n": 0,
+      "detalle": [
+       {
+        "clip": "P01",
+        "trampa_total_erroneo": false,
+        "cuadra": null,
+        "esperado": null,
+        "dicho": null,
+        "diagnostico": "incompleto",
+        "diagnostico_real": null,
+        "senales": [
+         "faltan ítems, precios o total"
+        ]
+       },
+       {
+        "clip": "P03",
+        "trampa_total_erroneo": true,
+        "cuadra": null,
+        "esperado": null,
+        "dicho": null,
+        "diagnostico": "incompleto",
+        "diagnostico_real": null,
+        "senales": [
+         "faltan ítems, precios o total"
+        ]
+       }
+      ]
+     }
+    },
+    "llm": null
+   },
+   "wer": {
+    "media": 0.5633122585177379,
+    "ic95": [
+     0.5512820512820513,
+     0.5753424657534246
+    ]
+   },
+   "cer": {
+    "media": 0.531853626687691,
+    "ic95": [
+     0.5251798561151079,
+     0.538527397260274
+    ]
+   }
+  },
+  "L3": {
+   "fuente": "L3__small__int8__cpu__glos",
+   "clips": [
+    {
+     "clip": "P01",
+     "fuente": "L3__small__int8__cpu__glos",
+     "wer": 0.1780821917808219,
+     "cer": 0.11643835616438356,
+     "device": "cpu",
+     "s_per_min": 16.46,
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "entero",
+          "cantidad": 1,
+          "precio_unitario": 69.9
+         },
+         {
+          "producto": "inca kola",
+          "tamano": "1.5 litros",
+          "cantidad": 1,
+          "precio_unitario": 9.0
+         },
+         {
+          "producto": "papas fritas",
+          "tamano": "grande",
+          "cantidad": 1,
+          "precio_unitario": 14.9
+         }
+        ],
+        "promocion": null,
+        "direccion_entrega": "avenida arequipa 2450 departamento 302 linx",
+        "metodo_pago": "yape",
+        "total_dicho": 93.8
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "no_extraido",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": false,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 93.8,
+        "descuento": 0.0,
+        "esperado": 93.8,
+        "dicho": 93.8,
+        "diferencia": 0.0,
+        "cuadra": true,
+        "senales": [],
+        "diagnostico": "ok"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "P03",
+     "fuente": "L3__small__int8__cpu__glos",
+     "wer": 0.1858974358974359,
+     "cer": 0.05635491606714628,
+     "device": "cpu",
+     "s_per_min": 17.91,
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "medio",
+          "cantidad": 2,
+          "precio_unitario": 39.9
+         }
+        ],
+        "promocion": "martes de pollo",
+        "direccion_entrega": "quiro 1 miracocha 1290 entre jesus maria",
+        "metodo_pago": "efectivo",
+        "total_dicho": 78.48
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "verificado",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": false,
+         "f1": 0.6666666666666666
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": false,
+         "digits_ok": false
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 79.8,
+        "descuento": 11.97,
+        "esperado": 67.83,
+        "dicho": 78.48,
+        "diferencia": 10.65,
+        "cuadra": false,
+        "senales": [],
+        "esperado_con_carta": 67.83,
+        "diagnostico": "error_hablante"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    }
+   ],
+   "por_metodo": {
+    "rules": {
+     "n_clips": 2,
+     "por_campo": {
+      "items": {
+       "aciertos": 1,
+       "n": 2,
+       "exactitud": 0.5,
+       "ic95_wilson": [
+        0.09452865480086614,
+        0.9054713451991339
+       ]
+      },
+      "promocion": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "direccion_entrega": {
+       "aciertos": 0,
+       "n": 2,
+       "exactitud": 0.0,
+       "ic95_wilson": [
+        0.0,
+        0.6576280471103807
+       ]
+      },
+      "metodo_pago": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      },
+      "total_dicho": {
+       "aciertos": 2,
+       "n": 2,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.34237195288961925,
+        1.0
+       ]
+      }
+     },
+     "global": {
+      "aciertos": 7,
+      "n": 10,
+      "exactitud": 0.7,
+      "ic95_wilson": [
+       0.39677321997956516,
+       0.892210712513788
+      ]
+     },
+     "macro_f1_metodo_pago": 1.0,
+     "error_absoluto_medio": {
+      "total_dicho_abs_err": 0.0
+     },
+     "verificacion": {
+      "campos_verificados": 9,
+      "exactitud_si_verificado": 0.6666666666666666,
+      "campos_sin_verificar": 0,
+      "exactitud_si_sin_verificar": null
+     },
+     "validacion": {
+      "atrapados": 1,
+      "perdidos": 0,
+      "falsas_alarmas": 0,
+      "correctos_sin_alarma": 1,
+      "no_chequeables": 0,
+      "diagnostico_acierta": 0,
+      "diagnostico_n": 1,
+      "detalle": [
+       {
+        "clip": "P01",
+        "trampa_total_erroneo": false,
+        "cuadra": true,
+        "esperado": 93.8,
+        "dicho": 93.8,
+        "diagnostico": "ok",
+        "diagnostico_real": null,
+        "senales": []
+       },
+       {
+        "clip": "P03",
+        "trampa_total_erroneo": true,
+        "cuadra": false,
+        "esperado": 67.83,
+        "dicho": 78.48,
+        "diagnostico": "error_hablante",
+        "diagnostico_real": "error_asr",
+        "senales": []
+       }
+      ]
+     }
+    },
+    "llm": null
+   },
+   "wer": {
+    "media": 0.1819898138391289,
+    "ic95": [
+     0.1780821917808219,
+     0.1858974358974359
+    ]
+   },
+   "cer": {
+    "media": 0.08639663611576492,
+    "ic95": [
+     0.05635491606714628,
+     0.11643835616438356
+    ]
+   }
+  },
+  "L4": {
+   "fuente": "L4__small__int8__cpu__glos",
+   "clips": [
+    {
+     "clip": "P01",
+     "fuente": "L4__small__int8__cpu__glos",
+     "wer": 0.4840182648401826,
+     "cer": 0.2910958904109589,
+     "device": "cpu",
+     "s_per_min": 38.34,
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "entero",
+          "cantidad": 1,
+          "precio_unitario": 1999.0
+         },
+         {
+          "producto": "inca kola",
+          "tamano": null,
+          "cantidad": 1,
+          "precio_unitario": 1.0
+         },
+         {
+          "producto": "papas fritas",
+          "tamano": null,
+          "cantidad": 1,
+          "precio_unitario": null
+         }
+        ],
+        "promocion": null,
+        "direccion_entrega": "avenida arequipado 2455 departamento 302 lineas",
+        "metodo_pago": "yape",
+        "total_dicho": null
+       },
+       "verified": {
+        "items": "sin_verificar",
+        "promocion": "no_extraido",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "no_extraido"
+       },
+       "score": {
+        "items": {
+         "ok": false,
+         "f1": 0.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": false,
+         "digits_ok": false
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": false,
+         "abs_err": null
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "cuadra": null,
+        "diagnostico": "incompleto",
+        "esperado": null,
+        "dicho": null,
+        "diferencia": null,
+        "senales": [
+         "faltan ítems, precios o total"
+        ]
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "P03",
+     "fuente": "L4__small__int8__cpu__glos",
+     "wer": 0.4358974358974359,
+     "cer": 0.20503597122302158,
+     "device": "cpu",
+     "s_per_min": 19.03,
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "medio",
+          "cantidad": 2,
+          "precio_unitario": 39.9
+         }
+        ],
+        "promocion": null,
+        "direccion_entrega": "donde ira cochanidos los 90 y los 33 marinos",
+        "metodo_pago": null,
+        "total_dicho": null
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "no_extraido",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "no_extraido",
+        "total_dicho": "no_extraido"
+       },
+       "score": {
+        "items": {
+         "ok": false,
+         "f1": 0.6666666666666666
+        },
+        "promocion": {
+         "ok": false
+        },
+        "direccion_entrega": {
+         "ok": false,
+         "digits_ok": false
+        },
+        "metodo_pago": {
+         "ok": false
+        },
+        "total_dicho": {
+         "ok": false,
+         "abs_err": null
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "cuadra": null,
+        "diagnostico": "incompleto",
+        "esperado": null,
+        "dicho": null,
+        "diferencia": null,
+        "senales": [
+         "faltan ítems, precios o total"
+        ]
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    }
+   ],
+   "por_metodo": {
+    "rules": {
+     "n_clips": 2,
+     "por_campo": {
+      "items": {
+       "aciertos": 0,
+       "n": 2,
+       "exactitud": 0.0,
+       "ic95_wilson": [
+        0.0,
+        0.6576280471103807
+       ]
+      },
+      "promocion": {
+       "aciertos": 1,
+       "n": 2,
+       "exactitud": 0.5,
+       "ic95_wilson": [
+        0.09452865480086614,
+        0.9054713451991339
+       ]
+      },
+      "direccion_entrega": {
+       "aciertos": 0,
+       "n": 2,
+       "exactitud": 0.0,
+       "ic95_wilson": [
+        0.0,
+        0.6576280471103807
+       ]
+      },
+      "metodo_pago": {
+       "aciertos": 1,
+       "n": 2,
+       "exactitud": 0.5,
+       "ic95_wilson": [
+        0.09452865480086614,
+        0.9054713451991339
+       ]
+      },
+      "total_dicho": {
+       "aciertos": 0,
+       "n": 2,
+       "exactitud": 0.0,
+       "ic95_wilson": [
+        0.0,
+        0.6576280471103807
+       ]
+      }
+     },
+     "global": {
+      "aciertos": 2,
+      "n": 10,
+      "exactitud": 0.2,
+      "ic95_wilson": [
+       0.056680947980693314,
+       0.5098431532792765
+      ]
+     },
+     "macro_f1_metodo_pago": 0.5,
+     "error_absoluto_medio": {},
+     "verificacion": {
+      "campos_verificados": 4,
+      "exactitud_si_verificado": 0.25,
+      "campos_sin_verificar": 1,
+      "exactitud_si_sin_verificar": 0.0
+     },
+     "validacion": {
+      "atrapados": 0,
+      "perdidos": 0,
+      "falsas_alarmas": 0,
+      "correctos_sin_alarma": 0,
+      "no_chequeables": 2,
+      "diagnostico_acierta": 0,
+      "diagnostico_n": 0,
+      "detalle": [
+       {
+        "clip": "P01",
+        "trampa_total_erroneo": false,
+        "cuadra": null,
+        "esperado": null,
+        "dicho": null,
+        "diagnostico": "incompleto",
+        "diagnostico_real": null,
+        "senales": [
+         "faltan ítems, precios o total"
+        ]
+       },
+       {
+        "clip": "P03",
+        "trampa_total_erroneo": true,
+        "cuadra": null,
+        "esperado": null,
+        "dicho": null,
+        "diagnostico": "incompleto",
+        "diagnostico_real": null,
+        "senales": [
+         "faltan ítems, precios o total"
+        ]
+       }
+      ]
+     }
+    },
+    "llm": null
+   },
+   "wer": {
+    "media": 0.45995785036880926,
+    "ic95": [
+     0.4358974358974359,
+     0.4840182648401826
+    ]
+   },
+   "cer": {
+    "media": 0.24806593081699024,
+    "ic95": [
+     0.20503597122302158,
+     0.2910958904109589
+    ]
+   }
+  }
+ }
+}

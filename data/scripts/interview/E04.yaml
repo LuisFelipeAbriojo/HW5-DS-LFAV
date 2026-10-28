@@ -1,0 +1,34 @@
+id: E04
+task: interview
+reference_date: "2026-10-26"
+variacion: >
+  Orden: tecnologías primero (vía portafolio), inglés, salario como RANGO, experiencia,
+  puesto, disponibilidad relativa en meses.
+  Trampas: rango salarial "entre cuatro mil quinientos y cinco mil" antes de fijar 5000;
+  "un año en marketing" que no cuenta; inglés básico dicho sin la palabra "nivel".
+ground_truth:
+  anios_experiencia: 3
+  ultimo_puesto: diseñadora de producto
+  tecnologias: [Figma, Jira, Excel]
+  pretension_salarial: 5000
+  moneda: PEN
+  disponibilidad: "2026-11-26"
+  nivel_ingles: basico
+turns:
+  - A: "Hola, ¿qué tal? Gracias por venir. Estuve revisando tu portafolio antes de la llamada y me gustó mucho el caso de la aplicación de citas médicas. ¿Con qué herramientas lo hiciste?"
+  - B: "Gracias. En diseño uso Figma para todo, los prototipos y el sistema de diseño. Para gestionar las tareas con desarrollo usamos Jira, y los resultados de las encuestas a usuarios los proceso en Excel."
+  - A: "¿Y las entrevistas con usuarios las haces tú misma?"
+  - B: "Sí, las planifico, las conduzco y luego armo los hallazgos con el equipo."
+  - A: "Bien. Una pregunta práctica. Varios de nuestros clientes son de afuera. ¿Qué tal tu inglés?"
+  - B: "Sinceramente, básico. Entiendo cuando leo un artículo, pero hablar me cuesta bastante, me pongo nerviosa."
+  - A: "Gracias por la sinceridad. ¿Qué expectativa económica tienes?"
+  - B: "Estuve viendo el mercado y para diseño de producto anda entre cuatro mil quinientos y cinco mil. Digamos cinco mil soles."
+  - A: "Cinco mil, entendido. ¿Y cuánto tiempo llevas en diseño?"
+  - B: "Tres años en diseño de producto. Antes estuve un año en marketing, pero eso no lo cuento porque era otra cosa."
+  - A: "¿Cuál fue tu último puesto?"
+  - B: "Mi último puesto fue diseñadora de producto en una startup de salud. Éramos tres diseñadoras para cuatro equipos."
+  - A: "¿Y para cuándo estarías disponible?"
+  - B: "Necesito un tiempo para cerrar mis proyectos y entregar bien. En un mes estaría lista para empezar."
+  - A: "Perfecto. Nosotros te contamos la decisión la próxima semana."
+  - B: "Muchas gracias, estaré pendiente."
+  - A: "A ti. Que te vaya bien."
