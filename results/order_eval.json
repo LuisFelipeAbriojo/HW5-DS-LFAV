@@ -1,0 +1,522 @@
+{
+ "task": "order",
+ "group": "real",
+ "levels": {
+  "REF": {
+   "fuente": "referencia",
+   "clips": [
+    {
+     "clip": "P01",
+     "fuente": "referencia",
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "entero",
+          "cantidad": 1,
+          "precio_unitario": 69.9
+         },
+         {
+          "producto": "inca kola",
+          "tamano": "1.5 litros",
+          "cantidad": 1,
+          "precio_unitario": 9.0
+         },
+         {
+          "producto": "papas fritas",
+          "tamano": "grande",
+          "cantidad": 1,
+          "precio_unitario": 14.9
+         }
+        ],
+        "promocion": null,
+        "direccion_entrega": "avenida arequipa 2450 departamento 302 lince",
+        "metodo_pago": "yape",
+        "total_dicho": 93.8
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "no_extraido",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": true,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 93.8,
+        "descuento": 0.0,
+        "esperado": 93.8,
+        "dicho": 93.8,
+        "diferencia": 0.0,
+        "cuadra": true,
+        "senales": [],
+        "diagnostico": "ok"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "P02",
+     "fuente": "referencia",
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "lomo saltado",
+          "tamano": "familiar",
+          "cantidad": 1,
+          "precio_unitario": 58.0
+         },
+         {
+          "producto": "arroz chaufa",
+          "tamano": "personal",
+          "cantidad": 2,
+          "precio_unitario": 24.0
+         },
+         {
+          "producto": "chicha morada",
+          "tamano": "jarra",
+          "cantidad": 1,
+          "precio_unitario": 15.0
+         }
+        ],
+        "promocion": "combo familiar",
+        "direccion_entrega": "calle los pinos 145 santiago de surco",
+        "metodo_pago": "tarjeta",
+        "total_dicho": 121.0
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "verificado",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": true,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 121.0,
+        "descuento": 10.0,
+        "esperado": 111.0,
+        "dicho": 121.0,
+        "diferencia": 10.0,
+        "cuadra": false,
+        "senales": [],
+        "esperado_con_carta": 111.0,
+        "diagnostico": "error_hablante"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "P03",
+     "fuente": "referencia",
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "medio",
+          "cantidad": 2,
+          "precio_unitario": 39.9
+         },
+         {
+          "producto": "inca kola",
+          "tamano": "500 ml",
+          "cantidad": 2,
+          "precio_unitario": 4.5
+         }
+        ],
+        "promocion": "martes de pollo",
+        "direccion_entrega": "jiron huiracocha 1290 jesus maria",
+        "metodo_pago": "efectivo",
+        "total_dicho": 78.48
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "verificado",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": true,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 88.8,
+        "descuento": 13.32,
+        "esperado": 75.48,
+        "dicho": 78.48,
+        "diferencia": 3.0,
+        "cuadra": false,
+        "senales": [],
+        "esperado_con_carta": 75.48,
+        "diagnostico": "error_hablante"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "P04",
+     "fuente": "referencia",
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "tallarin saltado",
+          "tamano": "personal",
+          "cantidad": 1,
+          "precio_unitario": 26.0
+         },
+         {
+          "producto": "lomo saltado",
+          "tamano": "personal",
+          "cantidad": 1,
+          "precio_unitario": 32.0
+         },
+         {
+          "producto": "ensalada",
+          "tamano": "personal",
+          "cantidad": 1,
+          "precio_unitario": 8.5
+         },
+         {
+          "producto": "inca kola",
+          "tamano": "1.5 litros",
+          "cantidad": 1,
+          "precio_unitario": 9.0
+         }
+        ],
+        "promocion": "gaseosa gratis",
+        "direccion_entrega": "avenida brasil 3125 interior 4b pueblo libre",
+        "metodo_pago": "plin",
+        "total_dicho": 66.5
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "verificado",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": true,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 75.5,
+        "descuento": 9.0,
+        "esperado": 66.5,
+        "dicho": 66.5,
+        "diferencia": 0.0,
+        "cuadra": true,
+        "senales": [],
+        "diagnostico": "ok"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    },
+    {
+     "clip": "P05",
+     "fuente": "referencia",
+     "methods": {
+      "rules": {
+       "fields": {
+        "items": [
+         {
+          "producto": "pollo a la brasa",
+          "tamano": "cuarto",
+          "cantidad": 3,
+          "precio_unitario": 22.9
+         },
+         {
+          "producto": "papas fritas",
+          "tamano": "mediana",
+          "cantidad": 1,
+          "precio_unitario": 9.9
+         },
+         {
+          "producto": "chicha morada",
+          "tamano": "vaso",
+          "cantidad": 3,
+          "precio_unitario": 5.0
+         }
+        ],
+        "promocion": "primera compra",
+        "direccion_entrega": "manzana f lote 12 urbanizacion santa rosa san borja",
+        "metodo_pago": "efectivo",
+        "total_dicho": 89.6
+       },
+       "verified": {
+        "items": "verificado",
+        "promocion": "verificado",
+        "direccion_entrega": "verificado",
+        "metodo_pago": "verificado",
+        "total_dicho": "verificado"
+       },
+       "score": {
+        "items": {
+         "ok": true,
+         "f1": 1.0
+        },
+        "promocion": {
+         "ok": true
+        },
+        "direccion_entrega": {
+         "ok": true,
+         "digits_ok": true
+        },
+        "metodo_pago": {
+         "ok": true
+        },
+        "total_dicho": {
+         "ok": true,
+         "abs_err": 0.0
+        }
+       },
+       "raw_literal": {},
+       "validation": {
+        "subtotal": 93.6,
+        "descuento": 5.0,
+        "esperado": 88.6,
+        "dicho": 89.6,
+        "diferencia": 1.0,
+        "cuadra": false,
+        "senales": [],
+        "esperado_con_carta": 88.6,
+        "diagnostico": "error_hablante"
+       }
+      },
+      "llm": {
+       "error": "TypeError: \"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for the `Authorization` header to be explicitly omitted\""
+      }
+     }
+    }
+   ],
+   "por_metodo": {
+    "rules": {
+     "n_clips": 5,
+     "por_campo": {
+      "items": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      },
+      "promocion": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      },
+      "direccion_entrega": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      },
+      "metodo_pago": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      },
+      "total_dicho": {
+       "aciertos": 5,
+       "n": 5,
+       "exactitud": 1.0,
+       "ic95_wilson": [
+        0.5655085052479191,
+        1.0
+       ]
+      }
+     },
+     "global": {
+      "aciertos": 25,
+      "n": 25,
+      "exactitud": 1.0,
+      "ic95_wilson": [
+       0.8668035060468213,
+       1.0
+      ]
+     },
+     "macro_f1_metodo_pago": 1.0,
+     "error_absoluto_medio": {
+      "total_dicho_abs_err": 0.0
+     },
+     "verificacion": {
+      "campos_verificados": 24,
+      "exactitud_si_verificado": 1.0,
+      "campos_sin_verificar": 0,
+      "exactitud_si_sin_verificar": null
+     },
+     "validacion": {
+      "atrapados": 3,
+      "perdidos": 0,
+      "falsas_alarmas": 0,
+      "correctos_sin_alarma": 2,
+      "no_chequeables": 0,
+      "diagnostico_acierta": 3,
+      "diagnostico_n": 3,
+      "detalle": [
+       {
+        "clip": "P01",
+        "trampa_total_erroneo": false,
+        "cuadra": true,
+        "esperado": 93.8,
+        "dicho": 93.8,
+        "diagnostico": "ok",
+        "diagnostico_real": null,
+        "senales": []
+       },
+       {
+        "clip": "P02",
+        "trampa_total_erroneo": true,
+        "cuadra": false,
+        "esperado": 111.0,
+        "dicho": 121.0,
+        "diagnostico": "error_hablante",
+        "diagnostico_real": "error_hablante",
+        "senales": []
+       },
+       {
+        "clip": "P03",
+        "trampa_total_erroneo": true,
+        "cuadra": false,
+        "esperado": 75.48,
+        "dicho": 78.48,
+        "diagnostico": "error_hablante",
+        "diagnostico_real": "error_hablante",
+        "senales": []
+       },
+       {
+        "clip": "P04",
+        "trampa_total_erroneo": false,
+        "cuadra": true,
+        "esperado": 66.5,
+        "dicho": 66.5,
+        "diagnostico": "ok",
+        "diagnostico_real": null,
+        "senales": []
+       },
+       {
+        "clip": "P05",
+        "trampa_total_erroneo": true,
+        "cuadra": false,
+        "esperado": 88.6,
+        "dicho": 89.6,
+        "diagnostico": "error_hablante",
+        "diagnostico_real": "error_hablante",
+        "senales": []
+       }
+      ]
+     }
+    },
+    "llm": null
+   }
+  }
+ }
+}

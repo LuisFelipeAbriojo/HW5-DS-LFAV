@@ -1,0 +1,70 @@
+{
+ "P01": {
+  "L1": {
+   "codec": "libopus",
+   "bitrate": 16000
+  },
+  "L2": {
+   "band_hz": [
+    300,
+    3400
+   ],
+   "sr": 8000
+  },
+  "L3": {
+   "snr_target_db": 5.0,
+   "snr_measured_db": 5.0,
+   "speech_frames_pct": 60.0,
+   "noise_source": "ruido_rosa_sintetico",
+   "base_codec": "libopus",
+   "base_bitrate": 16000,
+   "base": "L1"
+  },
+  "L4": {
+   "snr_target_db": 0.0,
+   "snr_measured_db": -0.0,
+   "speech_frames_pct": 60.0,
+   "noise_source": "ruido_rosa_sintetico",
+   "base_band_hz": [
+    300,
+    3400
+   ],
+   "base_sr": 8000,
+   "base": "L2"
+  }
+ },
+ "P03": {
+  "L1": {
+   "codec": "libopus",
+   "bitrate": 16000
+  },
+  "L2": {
+   "band_hz": [
+    300,
+    3400
+   ],
+   "sr": 8000
+  },
+  "L3": {
+   "snr_target_db": 5.0,
+   "snr_measured_db": 5.0,
+   "speech_frames_pct": 60.0,
+   "noise_source": "ruido_rosa_sintetico",
+   "base_codec": "libopus",
+   "base_bitrate": 16000,
+   "base": "L1"
+  },
+  "L4": {
+   "snr_target_db": 0.0,
+   "snr_measured_db": -0.0,
+   "speech_frames_pct": 60.0,
+   "noise_source": "ruido_rosa_sintetico",
+   "base_band_hz": [
+    300,
+    3400
+   ],
+   "base_sr": 8000,
+   "base": "L2"
+  }
+ }
+}
