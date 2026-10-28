@@ -1,0 +1,6 @@
+clip,palabras_referencia,anios_experiencia,ultimo_puesto,tecnologias,pretension_salarial,moneda,disponibilidad,nivel_ingles,reference_date
+E01,360,4.0,analista de inteligencia comercial,SQL; Python; Pandas; Power BI,6500,PEN,2026-11-09,intermedio,2026-10-26
+E02,294,2.5,desarrolladora backend junior,Java; Spring Boot; Docker; Kubernetes; PostgreSQL; Kafka,4800,PEN,inmediata,avanzado,2026-10-27
+E03,289,7.0,ingeniero de infraestructura cloud,AWS; Terraform; Kubernetes; GitHub Actions,2200,USD,2026-12-01,avanzado,2026-10-28
+E04,240,3.0,diseñadora de producto,Figma; Jira; Excel,5000,PEN,2026-11-26,basico,2026-10-26
+E05,228,5.0,líder técnico de datos,Airflow; Spark; Snowflake; dbt; Python,9350,PEN,2026-11-25,intermedio,2026-10-26

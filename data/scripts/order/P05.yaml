@@ -1,0 +1,40 @@
+id: P05
+task: order
+variacion: >
+  El cliente pide cuatro cuartos de pollo y se corrige a tres. Cupón de primera compra (-5).
+  La operadora dice 89.60 cuando lo correcto es 88.60. Dirección en formato manzana/lote.
+traps:
+  autocorreccion: true
+  total_erroneo: true
+  direccion_con_digitos: true
+ground_truth:
+  items:
+    - {producto: pollo a la brasa, tamano: cuarto, cantidad: 3, precio_unitario: 22.90}
+    - {producto: papas fritas, tamano: mediana, cantidad: 1, precio_unitario: 9.90}
+    - {producto: chicha morada, tamano: vaso, cantidad: 3, precio_unitario: 5.00}
+  promocion: primera compra
+  direccion_entrega: manzana f lote 12 urbanizacion santa rosa san borja
+  metodo_pago: efectivo
+  total_dicho: 89.60
+turns:
+  - A: "La Brasa Dorada, buenas tardes, le habla Andrea."
+  - B: "Hola, buenas tardes. Es la primera vez que les pido. Me pasaron un cupón de primera compra."
+  - A: "¡Bienvenido! Sí, el cupón de primera compra le descuenta cinco soles. ¿Qué le gustaría?"
+  - B: "Cuatro cuartos de pollo, por favor."
+  - A: "Cuatro cuartos de pollo, a veintidós con noventa cada uno."
+  - B: "No, perdón, me equivoqué. Son tres cuartos de pollo, no cuatro."
+  - A: "Tres cuartos de pollo, corregido. ¿Algo más?"
+  - B: "Una porción de papas fritas mediana y tres vasos de chicha morada."
+  - A: "Papas medianas a nueve noventa, y tres vasos de chicha a cinco soles cada uno."
+  - B: "Correcto."
+  - A: "¿Dirección de entrega?"
+  - B: "Manzana F, lote doce, urbanización Santa Rosa, en San Borja."
+  - A: "Manzana F, lote doce, urbanización Santa Rosa, San Borja. ¿Alguna referencia?"
+  - B: "Está a una cuadra del colegio, una casa de dos pisos."
+  - A: "¿Cómo va a pagar?"
+  - B: "En efectivo, exacto si puedo."
+  - A: "Perfecto. Con el cupón de primera compra, su total es ochenta y nueve con sesenta soles."
+  - B: "Ya. Tengo justo, creo. ¿Demora mucho?"
+  - A: "Unos treinta y cinco minutos."
+  - B: "Excelente, gracias."
+  - A: "Gracias a usted. Que lo disfrute."

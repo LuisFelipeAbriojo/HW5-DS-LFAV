@@ -1,0 +1,124 @@
+{
+ "interview": {
+  "clips": 5,
+  "distribucion": {
+   "palabras_referencia": {
+    "min": 228.0,
+    "max": 360.0,
+    "media": 282.2,
+    "n": 5
+   },
+   "anios_experiencia": {
+    "min": 2.5,
+    "max": 7.0,
+    "media": 4.3,
+    "n": 5
+   },
+   "ultimo_puesto": {
+    "analista de inteligencia comercial": 1,
+    "desarrolladora backend junior": 1,
+    "ingeniero de infraestructura cloud": 1,
+    "diseñadora de producto": 1,
+    "líder técnico de datos": 1
+   },
+   "tecnologias": {
+    "Python": 2,
+    "Kubernetes": 2,
+    "SQL": 1,
+    "Pandas": 1,
+    "Power BI": 1,
+    "Java": 1,
+    "Spring Boot": 1,
+    "Docker": 1,
+    "PostgreSQL": 1,
+    "Kafka": 1,
+    "AWS": 1,
+    "Terraform": 1,
+    "GitHub Actions": 1,
+    "Figma": 1,
+    "Jira": 1,
+    "Excel": 1,
+    "Airflow": 1,
+    "Spark": 1,
+    "Snowflake": 1,
+    "dbt": 1
+   },
+   "pretension_salarial": {
+    "min": 2200.0,
+    "max": 9350.0,
+    "media": 5570.0,
+    "n": 5
+   },
+   "moneda": {
+    "PEN": 4,
+    "USD": 1
+   },
+   "disponibilidad": {
+    "2026-11-09": 1,
+    "inmediata": 1,
+    "2026-12-01": 1,
+    "2026-11-26": 1,
+    "2026-11-25": 1
+   },
+   "nivel_ingles": {
+    "intermedio": 2,
+    "avanzado": 2,
+    "basico": 1
+   },
+   "reference_date": {
+    "2026-10-26": 3,
+    "2026-10-27": 1,
+    "2026-10-28": 1
+   }
+  }
+ },
+ "order": {
+  "clips": 6,
+  "distribucion": {
+   "palabras_referencia": {
+    "min": 172.0,
+    "max": 353.0,
+    "media": 221.5,
+    "n": 6
+   },
+   "promocion": {
+    "combo familiar": 2,
+    "null": 1,
+    "martes de pollo": 1,
+    "gaseosa gratis": 1,
+    "primera compra": 1
+   },
+   "direccion_entrega": {
+    "avenida arequipa 2450 departamento 302 lince": 1,
+    "calle los pinos 145 santiago de surco": 1,
+    "jiron huiracocha 1290 jesus maria": 1,
+    "avenida brasil 3125 interior 4b pueblo libre": 1,
+    "manzana f lote 12 urbanizacion santa rosa san borja": 1,
+    "jiron los geranios 1350 departamento 501 surquillo": 1
+   },
+   "metodo_pago": {
+    "yape": 2,
+    "efectivo": 2,
+    "tarjeta": 1,
+    "plin": 1
+   },
+   "total_dicho": {
+    "min": 66.5,
+    "max": 191.7,
+    "media": 106.84666666666665,
+    "n": 6
+   },
+   "trampa_autocorreccion": {
+    "True": 5,
+    "False": 1
+   },
+   "trampa_total_erroneo": {
+    "True": 4,
+    "False": 2
+   },
+   "trampa_direccion_con_digitos": {
+    "True": 6
+   }
+  }
+ }
+}

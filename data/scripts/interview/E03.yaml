@@ -1,0 +1,34 @@
+id: E03
+task: interview
+reference_date: "2026-10-28"
+variacion: >
+  Orden: puesto primero, disponibilidad, tecnologías, experiencia, salario, inglés al final.
+  Trampas: puesto anterior mencionado ("administrador de sistemas"); tecnología negada
+  ("Azure lo he tocado muy poco", no cuenta); experiencia total 7 junto a 3 y 4 parciales;
+  salario en dólares; disponibilidad como fecha absoluta dicha en palabras.
+ground_truth:
+  anios_experiencia: 7
+  ultimo_puesto: ingeniero de infraestructura cloud
+  tecnologias: [AWS, Terraform, Kubernetes, GitHub Actions]
+  pretension_salarial: 2200
+  moneda: USD
+  disponibilidad: "2026-12-01"
+  nivel_ingles: avanzado
+turns:
+  - A: "Hola, buenas noches. Gracias por aceptar la llamada a esta hora. Vi en tu CV que vienes de una consultora. ¿Cuál fue tu último cargo ahí?"
+  - B: "Buenas noches. Mi último puesto fue ingeniero de infraestructura cloud. Antes de eso fui administrador de sistemas en un banco, pero eso ya fue hace bastante."
+  - A: "Te pregunto de frente la disponibilidad, porque el proyecto arranca pronto y es lo que más le preocupa al cliente."
+  - B: "Tengo un compromiso con mi cliente actual hasta fin de noviembre, no lo puedo dejar a medias. Podría empezar a partir del primero de diciembre."
+  - A: "Me sirve. ¿Con qué tecnologías trabajas día a día?"
+  - B: "Casi todo en AWS. La infraestructura la escribimos con Terraform, los servicios corren en Kubernetes y los pipelines los tenemos en GitHub Actions. Azure no, Azure lo he tocado muy poco, no me animaría a decir que lo manejo."
+  - A: "Perfecto, el cliente es cien por ciento AWS. ¿Cuántos años de experiencia tienes en total?"
+  - B: "En total, siete años. Tres como administrador de sistemas y cuatro ya en nube."
+  - A: "La posición es para un cliente de Estados Unidos y se paga en dólares, por contrato. ¿Cuánto esperas?"
+  - B: "Por un contrato en dólares, mi expectativa es de dos mil doscientos dólares mensuales. Si incluye bono por guardias, puedo flexibilizar un poco."
+  - A: "Bien, está dentro del rango. Y supongo que el inglés no es problema."
+  - B: "No, avanzado. Viví un año en Toronto y todas mis reuniones con el cliente actual son en inglés."
+  - A: "Excelente. ¿Alguna pregunta sobre el proyecto?"
+  - B: "Sí, ¿el horario es de Lima o de la costa este?"
+  - A: "De la costa este, que en invierno coincide con Lima. Te mando el detalle por correo."
+  - B: "Perfecto. Gracias por la llamada."
+  - A: "Gracias a ti, buenas noches."

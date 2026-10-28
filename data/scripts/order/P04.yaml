@@ -1,0 +1,39 @@
+id: P04
+task: order
+variacion: >
+  El cliente pide dos tallarines y cambia uno por un lomo saltado personal. Promoción de ítem
+  gratis (gaseosa de regalo). Dirección con dígitos y letra (4B). Total dicho correcto.
+traps:
+  autocorreccion: true
+  total_erroneo: false
+  direccion_con_digitos: true
+ground_truth:
+  items:
+    - {producto: tallarin saltado, tamano: personal, cantidad: 1, precio_unitario: 26.00}
+    - {producto: lomo saltado, tamano: personal, cantidad: 1, precio_unitario: 32.00}
+    - {producto: inca kola, tamano: 1.5 litros, cantidad: 1, precio_unitario: 9.00}
+    - {producto: ensalada, tamano: personal, cantidad: 1, precio_unitario: 8.50}
+  promocion: gaseosa gratis
+  direccion_entrega: avenida brasil 3125 interior 4b pueblo libre
+  metodo_pago: plin
+  total_dicho: 66.50
+turns:
+  - A: "La Brasa Dorada, buenas noches. ¿Qué le enviamos hoy?"
+  - B: "Buenas noches. Quiero dos tallarines saltados personales."
+  - A: "Dos tallarines saltados personales, a veintiséis soles cada uno."
+  - B: "Mmm, no, cámbiame uno por un lomo saltado personal. Entonces un tallarín y un lomo."
+  - A: "Perfecto. Un tallarín saltado personal a veintiséis, y un lomo saltado personal a treinta y dos soles."
+  - B: "Y una ensalada personal, por favor."
+  - A: "La ensalada está ocho cincuenta. Le cuento que por pedidos de más de cincuenta soles la gaseosa va de regalo. ¿Le agrego una Inca Kola de litro y medio?"
+  - B: "Sí, claro, agrégala."
+  - A: "Listo, la Inca Kola de litro y medio de nueve soles va de regalo con la promoción de gaseosa gratis."
+  - B: "Genial. ¿Me lo mandan a la avenida Brasil tres mil ciento veinticinco, interior cuatro B, en Pueblo Libre?"
+  - A: "Avenida Brasil tres mil ciento veinticinco, interior cuatro B, Pueblo Libre. ¿Es un edificio?"
+  - B: "Es una quinta. El interior cuatro B está al fondo, a la izquierda."
+  - A: "Perfecto, le aviso al motorizado. ¿Método de pago?"
+  - B: "Por Plin."
+  - A: "Muy bien. El total con la gaseosa de regalo es sesenta y seis con cincuenta soles."
+  - B: "Perfecto. ¿Tienen cubiertos descartables?"
+  - A: "Sí, le mandamos dos juegos."
+  - B: "Gracias."
+  - A: "Gracias a usted, buenas noches."

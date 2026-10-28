@@ -1,0 +1,40 @@
+id: P02
+task: order
+variacion: >
+  Sin autocorrección. La operadora olvida restar la promoción combo familiar al decir el total
+  (dice 121 en lugar de 111): error del hablante.
+traps:
+  autocorreccion: false
+  total_erroneo: true
+  direccion_con_digitos: true
+ground_truth:
+  items:
+    - {producto: lomo saltado, tamano: familiar, cantidad: 1, precio_unitario: 58.00}
+    - {producto: arroz chaufa, tamano: personal, cantidad: 2, precio_unitario: 24.00}
+    - {producto: chicha morada, tamano: jarra, cantidad: 1, precio_unitario: 15.00}
+  promocion: combo familiar
+  direccion_entrega: calle los pinos 145 santiago de surco
+  metodo_pago: tarjeta
+  total_dicho: 121.00
+turns:
+  - A: "La Brasa Dorada, buenas tardes. ¿En qué le puedo ayudar?"
+  - B: "Hola, buenas tardes. Quiero pedir para el almuerzo, somos cuatro en la casa."
+  - A: "Perfecto. ¿Qué le provoca?"
+  - B: "Un lomo saltado familiar, ¿cuánto está?"
+  - A: "El lomo saltado familiar está cincuenta y ocho soles."
+  - B: "Ya. Y aparte dos arroz chaufa personales."
+  - A: "Dos chaufas personales, a veinticuatro soles cada uno."
+  - B: "Y para tomar, una jarra de chicha morada."
+  - A: "La jarra de chicha está quince soles. Señora, con ese pedido le aplica el combo familiar, que le descuenta diez soles."
+  - B: "Ah, qué bueno. Aplícamelo entonces."
+  - A: "Listo, combo familiar aplicado. ¿Para delivery o recojo en tienda?"
+  - B: "Delivery. La dirección es calle Los Pinos ciento cuarenta y cinco, en Santiago de Surco."
+  - A: "Calle Los Pinos ciento cuarenta y cinco, Surco. ¿Es casa o departamento?"
+  - B: "Es casa, puerta marrón, al costado de una bodega."
+  - A: "Perfecto. ¿Forma de pago?"
+  - B: "Con tarjeta, por favor. Que el motorizado traiga el POS."
+  - A: "Sí, lleva POS. Le confirmo entonces: su total es ciento veintiún soles."
+  - B: "Ya, perfecto. ¿Llega en media hora?"
+  - A: "Aproximadamente cuarenta minutos, señora."
+  - B: "Bueno, gracias."
+  - A: "A usted. Que disfrute su almuerzo."

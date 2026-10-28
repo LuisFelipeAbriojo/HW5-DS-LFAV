@@ -1,0 +1,35 @@
+id: E02
+task: interview
+reference_date: "2026-10-27"
+variacion: >
+  Orden: salario PRIMERO, inglés, experiencia, puesto, tecnologías, disponibilidad.
+  Trampas: inglés dicho como certificación (C1 => avanzado); "dos años y medio" (2.5) con un
+  "como tres" contando prácticas; disponibilidad categórica ("de inmediato").
+ground_truth:
+  anios_experiencia: 2.5
+  ultimo_puesto: desarrolladora backend junior
+  tecnologias: [Java, Spring Boot, Docker, Kubernetes, PostgreSQL, Kafka]
+  pretension_salarial: 4800
+  moneda: PEN
+  disponibilidad: inmediata
+  nivel_ingles: avanzado
+turns:
+  - A: "Buenos días, gracias por tu tiempo. Antes de entrar al detalle, nuestro proceso pide registrar la expectativa económica al inicio, para no hacernos perder tiempo. ¿Cuál sería tu pretensión salarial?"
+  - B: "Claro, no hay problema. Considerando que el puesto es de desarrollo backend con guardias los fines de semana, estoy buscando cuatro mil ochocientos soles al mes, en planilla."
+  - A: "Cuatro mil ochocientos, perfecto. Otra cosa rápida. La entrevista técnica es en inglés. ¿Tienes algún problema con eso?"
+  - B: "Ninguno. Tengo certificación C1 y en mi trabajo actual las reuniones diarias son con un equipo en Canadá."
+  - A: "Excelente. Cuéntame de tu experiencia."
+  - B: "Llevo dos años y medio programando de forma profesional. Si contamos las prácticas serían como tres, pero prefiero contar solo lo que fue en planilla."
+  - A: "Me parece honesto. ¿Y cuál es tu cargo actual?"
+  - B: "Soy desarrolladora backend junior en una fintech de pagos, aunque en la práctica ya diseño servicios completos y reviso el código de los practicantes."
+  - A: "¿Con qué stack trabajas?"
+  - B: "El núcleo está en Java, con Spring Boot. Desplegamos todo en contenedores con Docker y orquestamos con Kubernetes. La base de datos principal es PostgreSQL."
+  - A: "¿Y colas de mensajes, has usado alguna?"
+  - B: "Sí, Kafka, pero del lado del consumidor. Leo eventos y los proceso, no administro el clúster."
+  - A: "¿Por qué estás buscando un cambio?"
+  - B: "Porque quiero crecer hacia un rol semi senior y en mi empresa actual la estructura es muy plana. Además me interesa mucho el dominio de logística que manejan ustedes."
+  - A: "Tiene sentido. ¿Cuándo podrías empezar?"
+  - B: "De inmediato. Mi contrato terminó la semana pasada, así que estoy disponible ya mismo."
+  - A: "Perfecto. Con eso tengo lo que necesito. La siguiente etapa es la prueba técnica, te llega un correo hoy en la tarde."
+  - B: "Genial, quedo atenta. Gracias."
+  - A: "Gracias a ti, hasta pronto."
