@@ -1,0 +1,23 @@
+name: regression-gate
+# Recalcula métricas desde las transcripciones cacheadas. Los runners estándar NO tienen GPU:
+# este workflow jamás transcribe; si alguien lo intentara, correría en CPU 40x más lento o fallaría.
+on:
+  push:
+    paths: ["vozregistro/**", "scripts/**", "cache/**", "config.yaml", "data/scripts/**"]
+  pull_request:
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt
+      - name: El motor no importa librerías de UI
+        run: python scripts/check_engine_imports.py
+      - name: Pruebas unitarias
+        run: python -m pytest -q
+      - name: Verdad de campo desde los guiones
+        run: python scripts/build_ground_truth.py
+      - name: Puerta de calidad (sin GPU, sin API)
+        run: python scripts/regression_gate.py
